@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Element Selector</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: system-ui;
+    }
+    body{
+      max-width: 600px;
+      width: 90%;
+      margin: auto;
+      border-left: 1px solid #000;
+      border-right: 1px solid #000;
+      padding: 5rem 1rem;
+    }
+    p{
+      background-color: #babef7;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      padding: 0.3rem 1rem;
+    }
+    .active{
+      background-color: rgb(33, 33, 172);
+      color: white;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <p class="option active" onclick="changeStyle(this)">HTML</p>
+  <p class="option" onclick="changeStyle(this)">CSS</p>
+  <p class="option" onclick="changeStyle(this)">JavaScript</p>
+  <p class="option" onclick="changeStyle(this)">PHP</p>
+  <p class="option" onclick="changeStyle(this)">PHP with MySql</p>
+</body>
+<script>
+  
+  function changeStyle(element){
+
+    // get all options in the form Array 
+    let options=document.querySelectorAll(".option");
+    
+// remove ".active" class from all options 
+    options.forEach(option => {
+      option.classList.remove("active")
+    });
+
+// add active class to clicked html element 
+    element.classList.add("active")
+  }
+</script>
+</html>

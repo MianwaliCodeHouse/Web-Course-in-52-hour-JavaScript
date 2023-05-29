@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Range Slider</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: system-ui;
+    }
+    .RangeSlider{
+      padding: 1.4rem 1rem;
+      border-radius: 10px;
+      box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.24);
+    }
+    body{
+      display: grid;
+      place-content: center;
+      height: 100vh;
+    }
+    .displayValue{
+      height: 200px;
+      width: 400px;
+      border: 1px solid rgba(0, 0, 0, 0.432);
+      font-size: 8rem;
+      text-align: center;
+    }
+    .slider input{
+      display: block;
+      width: 100%;
+      margin-top: 1rem;
+    }
+    .labels{
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+    .setrange{
+      display: flex;
+      justify-content: space-around;
+      margin-top: 1rem;
+    }
+    .setrange input{
+      width: 150px;
+      padding: 0.5rem 1rem;
+      font-size: 1.3rem;
+      text-align: center;
+    }
+    button{
+      font-size: 1.8rem;
+      padding: 0.4rem 1.1rem;
+      width: 80%;
+      margin: auto;
+      display: block;
+      margin-top: 1rem;
+      background-color: rgb(20, 20, 219);
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="RangeSlider">
+
+
+    <!-- 1)Show Range Value  -->
+    <div class="displayValue">
+      ...
+    </div>
+
+    <!-- 2)Slider  -->
+    <div class="slider">
+
+      <!-- range slider  -->
+<!--  1)min Attribute
+      2)max Attribute -->
+      <input type="range" oninput="displayValue(this.value)" value="0" id="rangeSlider"> 
+
+      <!-- labels of min and max  -->
+      <div class="labels">
+        <div>min: <span class="min">0</span></div>
+        <div>max: <span class="max">100</span></div>
+      </div>
+    </div>
+
+    <hr>
+    <!-- 3) Get input and Set Range  -->
+    <div class="setrange">
+      <input type="number" placeholder="min-value" class="min-value">
+      <input type="number" placeholder="max-value" class="max-value">
+    </div>
+    <button onclick="setRange()">Set Range</button>
+  </div>
+</body>
+<script>
+function setRange(){
+  let min=document.querySelector(".min-value").value;
+  let max=document.querySelector(".max-value").value;
+
+  document.querySelector(".min").innerHTML=min;
+  document.querySelector(".max").innerHTML=max;
+
+  let rSlider=document.querySelector("#rangeSlider")
+  rSlider.min=min
+  rSlider.max=max
+}
+
+
+  let display=document.querySelector(".displayValue")
+
+  function displayValue(value){
+  display.innerHTML=value
+  }
+</script>
+</html>

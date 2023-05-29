@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moving Box</title>
+  <style>
+    * {
+      font-family: system-ui;
+    }
+
+    button {
+      font-size: 1.6rem;
+    }
+
+    body {
+      display: grid;
+      place-content: center;
+      height: 95vh;
+    }
+    .parentBox{
+      border: 2px solid;
+      width: 600px;
+      height: 600px;
+      position: relative;
+    }
+    .childBox{
+      width: 50px;
+      height: 50px;
+      background-color: blue;
+      position: absolute;
+      left: 0;
+      top: 0;
+      transition: 0.5s ease-in;
+    }
+    .btn{
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- buttons -->
+  <div class="btn">
+    <button onclick="moveLeft()">Left</button>
+    <button onclick="moveRight()">Right</button>
+    <button onclick="moveTop()">Top</button>
+    <button onclick="moveBottom()">Bottom</button>
+    <!-- <button onclick="moveBottom()">Diagonal</button> -->
+  </div>
+  <!-- boxes -->
+  <div class="parentBox">
+    <div class="childBox"></div>
+  </div>
+</body>
+<script>
+  let box=document.querySelector(".childBox")
+  function moveRight(){
+    box.style.right="0px";
+    box.style.left="550px";
+  }
+  function moveLeft(){
+    box.style.left="0px";
+    box.style.right="550px";
+  }
+  function moveTop(){
+    box.style.top="0px";
+    box.style.bottom="550px";
+  }
+  function moveBottom(){
+    box.style.bottom="0px";
+    box.style.top="550px";
+  }
+  // function moveDiagonal(){
+//     if(left=0 && top=0){
+// right--0
+// bottom--0
+//     }
+  // }
+</script>
+</html>

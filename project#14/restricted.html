@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Red Zone</title>
+  <style>
+    body{
+    font-family: system-ui;
+    padding: 2rem;
+  }
+  h1{
+    display: flex;
+    justify-content: space-between;
+  }
+  </style>
+</head>
+<body>
+  <h1>
+    <button onclick="history.back()">Back</button>
+    <button onclick="history.forward()">Forword</button>
+  </h1>
+  <h1>Welcome to dangerous Page</h1>
+  <p>Plz like , subscribe and share. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus fugit architecto ipsam sunt veniam eveniet ad commodi vero nobis minima? Saepe cum voluptatum nemo et nobis rem ipsa, id accusamus.</p>
+  <button onclick="run()">Feedback</button>
+  <hr>
+  <h3>Feedbacks:-</h3>
+  <h2 id="feedbacks"></h2>
+</body>
+
+<script>
+  alert("This is not secure!!!")
+  Question=confirm("Are you 18+?")
+  if(Question==false){
+    document.write("<a href='index.html' id='backbtn'>Not Found</a>")
+    backbtn.click()
+  }
+
+  // feedback section 
+  function run(){
+    feedback=prompt('Enter your Feedback about this site:')
+    feedbacks.innerHTML+=`<h4>${feedback}</h4>`
+  }
+</script>
+
+</html>

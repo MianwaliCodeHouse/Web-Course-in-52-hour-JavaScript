@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Preview</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: system-ui;
+    }
+    body{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #d8d8d8;
+    }
+    .imagePreview{
+      background-color: #fff;
+      max-width: 600px;
+      min-height: 300px;
+      border-radius: 10px;
+      box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.151);
+      width: 80%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+    button{
+      background-color: blueviolet;
+      color: white;
+      padding: 0.3rem 0.8rem;
+      font-size: 1.5rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    img{
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="imagePreview">
+    <img src="" alt="" class="showImage">
+    <button onclick="clickSelectInputBtn()">Choose Image</button>
+    <input type="file" class="input-file" onchange="showImage(this)" hidden>
+  </div>
+</body>
+<script>
+  let showImg=document.querySelector(".showImage")
+  function showImage(input_file_btn){
+    let img=input_file_btn.files[0]
+    let url=URL.createObjectURL(img)
+    showImg.src=`${url}`
+    console.log(url)
+    
+  }
+
+
+  function clickSelectInputBtn(){
+    document.querySelector(".input-file").click()
+  }
+</script>
+</html>

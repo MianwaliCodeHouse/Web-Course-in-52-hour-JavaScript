@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <select name="second" id="time">
+    <option value="">Select Second</option>
+  </select>
+</body>
+<script>
+  let seconds=document.querySelector("#time")
+for (let index = 0; index < 60; index++) {
+  seconds.innerHTML+=`<option value="${index}">${index}</option>`
+  
+}
+</script>
+</html>

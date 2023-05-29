@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toggle Light/Dark Mode</title>
+  <style>
+    body{
+      padding: 2rem;
+      font-family: system-ui;
+    }
+    .dark{
+      background-color: rgb(15, 15, 15);
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <h1>MianwaliCodeHouse</h1>
+  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae, ipsum unde dolorum nulla repellat adipisci consectetur inventore praesentium ullam, ut excepturi fugiat sapiente iusto, perspiciatis impedit distinctio doloribus ea maiores!</p>
+  <h2>Toggle Light/Dark Mode</h2>
+  <button onclick="toggleMode()"><h3>Toggle Mode</h3></button>
+</body>
+<script>
+
+if(localStorage.getItem("Mode")=="dark"){
+  document.body.classList.add("dark")
+}
+
+  function toggleMode(){
+    document.body.classList.toggle("dark")
+    if(localStorage.getItem("Mode")=='light' | localStorage.getItem("Mode")==null){
+      localStorage.setItem("Mode","dark")
+    }else{
+      localStorage.setItem("Mode","light")
+    }
+  }
+</script>
+</html>
